@@ -12,5 +12,13 @@ class School extends Model
         "whatsapp-link",
         "facebook-link"
     ];
-    
+    public function users(){
+        return $this->belongsTo(User::class, "schoolusers");
+    }
+    public function departments(){
+        return $this->hasMany(Department::class);
+    }
+    public function designations(){
+        return $this->through("departments")->has("designations");
+    }
 }
