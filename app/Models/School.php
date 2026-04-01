@@ -12,4 +12,5 @@ class School extends Model
         "whatsapp-link",
         "facebook-link"
     ];
+    
 }
