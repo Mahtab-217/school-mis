@@ -12,9 +12,15 @@ class Department extends Model
         "school_id",
     ];
     public function designations(){
-        return $this->hasMany("Designation::class");
+        return $this->hasMany(Designation::class);
     }
-    public function department(){
+    // public function department(){
+    //     return $this->belongsTo(School::class);
+    // }
+    public function school(){
         return $this->belongsTo(School::class);
+    }
+    public function employees(){
+        return $this->hasManyThrough(Employee::class, Designation::class);
     }
 }
