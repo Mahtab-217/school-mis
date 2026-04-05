@@ -25,7 +25,7 @@ class Department extends Model
     public function employees(){
         return $this->hasManyThrough(Employee::class, Designation::class);
     }
-    public function scopeInSchool($query){
-        return $query->where("school_id",session("school_id"));
-    }
+    // public function scopeInSchool($query){
+    //     return $query->where("school_id",session("school_id"));
+    // }
 }
