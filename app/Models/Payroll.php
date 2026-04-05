@@ -12,4 +12,14 @@ class Payroll extends Model
         "month",
         "school_id"
     ];
+    public function school(){
+        return $this->belongsTo(School::class);
+    }
+    public function salaries(){
+        return $this->hasMany(Salary::class);
+    }
+
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
 }
