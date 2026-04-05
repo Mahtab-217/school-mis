@@ -13,6 +13,9 @@ class Employee extends Model
         "email",
         "designation_id"
     ];
+    public function designations(){
+        return $this->belongsTo(Designation::class);
+    }
     public function contracts(){
         return $this->hasMany(Contract::class);
     }
